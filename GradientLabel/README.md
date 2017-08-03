@@ -8,7 +8,7 @@ There are serval ways to add gradient color to a label.
 
 custom UILabel, override `draw(_ rect:)` method to apply gradient color.
 
-```
+```swift
 class GradientLabel: UILabel {
 
     var startColor: UIColor = UIColor.white
@@ -46,14 +46,14 @@ use mask
 
 define the container view
 
-```
+```swift
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 view.backgroundColor = .black
 ```
 
 add a gradient layer as background layer
 
-```
+```swift
 let gradient = CAGradientLayer()
 gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
 gradient.startPoint = CGPoint(x: 0, y: 0.5)
@@ -64,7 +64,7 @@ view.layer.addSublayer(gradient)
 
 add a label as the mask
 
-```
+```swift
 let label = UILabel()
 label.font = UIFont.systemFont(ofSize: 30, weight: UIFontWeightBold)
 label.text = "Hello world"
