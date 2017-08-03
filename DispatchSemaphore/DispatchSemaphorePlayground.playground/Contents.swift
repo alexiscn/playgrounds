@@ -17,3 +17,5 @@ for i in 0...9 {
     }).resume()
     semaphore.wait()
 }
+
+print("123")
