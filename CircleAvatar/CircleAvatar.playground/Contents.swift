@@ -17,12 +17,22 @@ avatarButton.clipsToBounds = true
 container.addSubview(avatarButton)
 
 // method 2
+var avatarImageView = UIImageView()
+avatarImageView.frame = CGRect(x: 100, y: 120, width: 90, height: 90)
 
+var image = UIImage(named: "avatar.jpg")
+UIGraphicsBeginImageContextWithOptions(avatarImageView.bounds.size, false, 0.0)
+UIBezierPath(roundedRect: avatarImageView.bounds, cornerRadius: avatarImageView.bounds.width/2.0).addClip()
+image?.draw(in: avatarImageView.bounds)
+image = UIGraphicsGetImageFromCurrentImageContext()
+UIGraphicsEndImageContext()
+avatarImageView.image = image
+container.addSubview(avatarImageView)
 
 // method 3
 
 let avatarButton3 = UIButton(type: .custom)
-avatarButton3.frame = CGRect(x: 0, y: 300, width: 90, height: 90)
+avatarButton3.frame = CGRect(x: 100, y: 220, width: 90, height: 90)
 avatarButton3.setImage(UIImage(named: "avatar.jpg"), for: .normal)
 
 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
